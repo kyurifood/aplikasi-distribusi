@@ -4,18 +4,22 @@
  */
 package com.makananbekuenak.kyurifood.entity;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
  *
  * @author gilang
  */
+@Entity
 public class User {
     
+    @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
-    private String user;
+    private String username;
     private String email;
     private String fullname;
 
@@ -35,12 +39,14 @@ public class User {
         this.fullname = fullname;
     }
 
-    public String getUser() {
-        return user;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUsername(String username) {
+        this.username = username;
     }
+
+    
   
 }
