@@ -18,7 +18,11 @@ email varchar(255) not null unique,
 fullname varchar(255) not null
 ) Engine=InnoDB;
 -- Tabel Role --
-
+create table role (
+id varchar(255) not null,
+kode varchar(255) not null unique,
+nama varchar(255) not null
+) Engine=InnoDB;
 -- Tabel Permission --
 
 -- Tabel Produk --

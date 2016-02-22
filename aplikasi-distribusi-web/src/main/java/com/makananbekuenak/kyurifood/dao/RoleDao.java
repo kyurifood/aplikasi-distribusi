@@ -4,10 +4,11 @@
  */
 package com.makananbekuenak.kyurifood.dao;
 
-import com.makananbekuenak.kyurifood.entity.Kabupaten;
+
+import com.makananbekuenak.kyurifood.entity.Role;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 
-public interface KabupatenDao extends PagingAndSortingRepository<Kabupaten, String> {
+public interface RoleDao extends PagingAndSortingRepository<Role, String> {
     
 }

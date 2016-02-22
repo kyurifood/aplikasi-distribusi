@@ -5,7 +5,7 @@
 package com.makananbekuenak.kyurifood.dao;
 
 import com.makananbekuenak.kyurifood.AplikasiDistribusiWebApplication;
-import com.makananbekuenak.kyurifood.entity.User;
+import com.makananbekuenak.kyurifood.entity.Role;
 import javax.transaction.Transactional;
 import org.junit.Assert;
 import org.junit.Test;
@@ -15,35 +15,29 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-
-/**
- *
- * @author gilang
- */
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = AplikasiDistribusiWebApplication.class)
 @Transactional
-@Sql(scripts = {"/mysql/delete-data.sql", "/mysql/sample-user.sql"})
-public class UserDaoTest {
+@Sql(scripts = {"/mysql/delete-data.sql", "/mysql/sample-role.sql"})
+public class RoleDaoTest {
     
     @Autowired
-    private UserDao userDao;
+    private RoleDao roleDao;
     
     @Test
     public void testSave(){
-        User u = new User();
-        Assert.assertNull(u.getUsername());
-        Assert.assertNull(u.getEmail());
-        Assert.assertNull(u.getFullname());
-        userDao.save(u);
-        Assert.assertNotNull(u.getUsername());
+        Role r = new Role();
+        Assert.assertNull(r.getId());
+        Assert.assertNull(r.getKode());
+        Assert.assertNull(r.getNama());
+        roleDao.save(r);
+        Assert.assertNotNull(r.getId());
     }
     
     @Test
-    public void testCariByUsername(){
-        Assert.assertNotNull(userDao.findOne("artivisi"));
-        Assert.assertNull(userDao.findOne("abcd"));
-    }
-    
+    public void testCariByRole(){
+        Assert.assertNotNull(roleDao.findOne("1"));
+        Assert.assertNull(roleDao.findOne("abcd"));
+} 
+
 }
