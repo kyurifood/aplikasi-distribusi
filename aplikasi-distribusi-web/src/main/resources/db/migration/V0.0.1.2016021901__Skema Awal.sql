@@ -32,7 +32,10 @@ kode varchar(255) not null unique,
 nama varchar(255) not null
 ) Engine=InnoDB;
 -- Tabel Permission --
-
+create table permission (
+    kode varchar(255) NOT NULL unique,
+    nama varchar(255) NOT NULL
+)Engine=InnoDB;
 -- Tabel Produk --
 
 -- Tabel Distributor --
