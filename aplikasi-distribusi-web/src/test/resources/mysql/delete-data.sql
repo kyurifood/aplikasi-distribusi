@@ -4,3 +4,4 @@ delete from role;
 delete from kelurahan;
 delete from kecamatan;
 delete from permission;
+delete from produk;
