@@ -78,14 +78,11 @@ kode varchar(255) not null unique,
 nama varchar(255) not null,
 hp varchar(255) not null,
 alamat varchar(255) not null
-<<<<<<< HEAD
 )Engine=InnoDB;
-=======
-)Engine=InnoDB ;
 
 -- Tabel Regional --
 create table regional (
 kode varchar(255) not null,
 nama varchar(255) not null
 ) Engine=InnoDB;
->>>>>>> 55de711eba23fd60cf11f93e73ed491727f65183
+

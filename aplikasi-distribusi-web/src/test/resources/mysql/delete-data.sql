@@ -22,9 +22,6 @@ delete from permission;
 --regional--
 delete from regional;
 
---permission--
-delete from permission;
-
 --produk--
 delete from produk;
 
@@ -36,4 +33,3 @@ delete from customer;
 
 --distributor--
 delete from distributor;
-
