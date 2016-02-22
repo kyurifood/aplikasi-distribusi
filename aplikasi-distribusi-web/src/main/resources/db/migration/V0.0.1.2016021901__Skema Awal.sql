@@ -6,6 +6,10 @@ create table kabupaten (
 ) Engine=InnoDB;
 
 -- Tabel Kecamatan --
+create table kecamatan (
+kode varchar(255) not null unique,
+nama varchar(255) not null
+) Engine=InnoDB ;
 
 -- Tabel Kelurahan --
 create table kelurahan (
