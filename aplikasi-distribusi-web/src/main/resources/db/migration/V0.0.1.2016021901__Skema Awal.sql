@@ -46,8 +46,8 @@ nama varchar(255) NOT NULL
 
 -- Tabel Produk --
 create table produk (
-    kode varchar(255) NOT NULL unique,
-    nama varchar(255) NOT NULL
+kode varchar(255) NOT NULL unique,
+nama varchar(255) NOT NULL
 )Engine=InnoDB;
 
 -- Tabel Distributor --
@@ -55,11 +55,11 @@ create table distributor (
 kode varchar(255) not null unique,
 nama varchar(255) not null,
 hp varchar(255) not null,
-pinBB varchar(255) ,
+pinBB varchar(255),
 email varchar(255) not null,
 rekening varchar(255) not null,
 alamat varchar(255) not null
-) Engine=InnoDB;
+)Engine=InnoDB;
 
 -- Tabel Marketer --
 create table marketer (
@@ -78,4 +78,4 @@ kode varchar(255) not null unique,
 nama varchar(255) not null,
 hp varchar(255) not null,
 alamat varchar(255) not null
-)Engine=InnoDB ;
+)Engine=InnoDB;
