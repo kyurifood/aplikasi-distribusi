@@ -16,14 +16,19 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @Transactional
 @Sql(scripts = {"/mysql/delete-data.sql", "/mysql/sample-kabupaten.sql"})
 public class KabupatenDaoTest {
-    @Autowired private KabupatenDao kabupatenDao;
+    
+    @Autowired 
+    private KabupatenDao kabupatenDao;
     
     @Test
     public void testSave(){
         Kabupaten k = new Kabupaten();
         Assert.assertNull(k.getId());
+        Assert.assertNull(k.getKode());
+        Assert.assertNull(k.getNama());
         kabupatenDao.save(k);
         Assert.assertNotNull(k.getId());
+
     }
     
     @Test
