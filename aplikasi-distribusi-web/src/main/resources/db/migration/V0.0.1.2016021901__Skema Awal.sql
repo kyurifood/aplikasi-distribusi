@@ -14,8 +14,8 @@ nama varchar(255) not null
 -- Tabel Kelurahan --
 create table kelurahan (
     id varchar(255) primary key unique,
-    kode varchar(255) NOT NULL unique,
-    nama varchar(255) NOT NULL
+    kode varchar(255) not null,
+    nama varchar(255) not null
 ) Engine=InnoDB ;
 -- Tabel Kodepos --
 
@@ -43,3 +43,9 @@ create table permission (
 -- Tabel Marketer --
 
 -- Tabel Customer --
+create table customer (
+    kode varchar(255) not null unique,
+    nama varchar(255) not null,
+    hp varchar(255) not null,
+    alamat varchar(255) not null
+) Engine=InnoDB ;
