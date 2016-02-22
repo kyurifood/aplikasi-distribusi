@@ -18,7 +18,10 @@ create table kelurahan (
     nama varchar(255) NOT NULL
 ) Engine=InnoDB ;
 -- Tabel Kodepos --
-
+create table kodepos (
+    kode varchar(255) NOT NULL unique,
+    nama varchar(255) NOT NULL
+) Engine=InnoDB ;
 -- Tabel User --
 create table user (
 username varchar(255) not null unique,
@@ -32,7 +35,10 @@ kode varchar(255) not null unique,
 nama varchar(255) not null
 ) Engine=InnoDB;
 -- Tabel Permission --
-
+create table permission (
+    kode varchar(255) NOT NULL unique,
+    nama varchar(255) NOT NULL
+)Engine=InnoDB;
 -- Tabel Produk --
 
 -- Tabel Distributor --
