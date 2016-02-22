@@ -45,6 +45,10 @@ nama varchar(255) NOT NULL
 )Engine=InnoDB;
 
 -- Tabel Produk --
+create table produk (
+    kode varchar(255) NOT NULL unique,
+    nama varchar(255) NOT NULL
+)Engine=InnoDB;
 
 -- Tabel Distributor --
 create table distributor (

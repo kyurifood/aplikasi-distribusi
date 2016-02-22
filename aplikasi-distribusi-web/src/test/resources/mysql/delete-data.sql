@@ -1,7 +1,7 @@
 --kabupaten--
 delete from kabupaten;
 
---kode pos--
+--kodepos--
 delete from kodepos;
 
 --user--
@@ -16,17 +16,26 @@ delete from kelurahan;
 --kecamatan--
 delete from kecamatan;
 
+
 --permision--
 delete from permission;
 
 --regional--
 delete from regional;
 
+--permission--
+delete from permission;
+
+--produk--
+delete from produk;
+
+--marketer--
+delete from marketer;
+
 --customer--
 delete from customer;
 
 --distributor--
 delete from distributor;
-
 --market--
 delete from marketer;
