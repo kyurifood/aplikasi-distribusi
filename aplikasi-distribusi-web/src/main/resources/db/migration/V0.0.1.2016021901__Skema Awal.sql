@@ -1,7 +1,7 @@
 -- Tabel Kabupaten --
 create table kabupaten (
-    id varchar(255) primary key,
-    kode varchar(255) NOT NULL,
+    id varchar(255) primary key unique,
+    kode varchar(255) NOT NULL unique,
     nama varchar(255) NOT NULL
 ) Engine=InnoDB;
 

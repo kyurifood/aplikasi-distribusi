@@ -24,7 +24,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = AplikasiDistribusiWebApplication.class)
 @Transactional
-@Sql(scripts = {"/mysql/delete-data.sql", "/mysql/sample-kabupaten.sql"})
+@Sql(scripts = {"/mysql/delete-data.sql", "/mysql/sample-user.sql"})
 public class UserDaoTest {
     
     @Autowired
