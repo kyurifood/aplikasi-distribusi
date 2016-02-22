@@ -34,6 +34,7 @@ public class ProdukDaoTest {
         Assert.assertNotNull(p.getKode());
     }
     
+    @Test
     public void testCariBykode(){
         Assert.assertNotNull(produkDao.findOne("nnn"));
         Assert.assertNull(produkDao.findOne("aaa"));
