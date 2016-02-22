@@ -23,7 +23,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = AplikasiDistribusiWebApplication.class)
 @Transactional
-@Sql(scripts = {"/mysql/delete-data.sql", "/mysql/sample-marketer.sql"})
+@Sql(scripts = {"/mysql/delete-data.sql","/mysql/sample-marketer.sql"})
 public class MarketerDaoTest {
     
     @Autowired
@@ -43,9 +43,10 @@ public class MarketerDaoTest {
         Assert.assertNotNull(m.getKode());
     }
     
+    @Test
     public void testCariByKode(){
         Assert.assertNotNull(marketerDao.findOne("123"));
-        Assert.assertNull(marketerDao.findOne("abcd"));
+        Assert.assertNull(marketerDao.findOne("abc"));
     }
     
 }
