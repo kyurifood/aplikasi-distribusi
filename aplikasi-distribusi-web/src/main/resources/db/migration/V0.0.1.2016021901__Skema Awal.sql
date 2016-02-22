@@ -8,7 +8,11 @@ create table kabupaten (
 -- Tabel Kecamatan --
 
 -- Tabel Kelurahan --
-
+create table kelurahan (
+    id varchar(255) primary key unique,
+    kode varchar(255) NOT NULL unique,
+    nama varchar(255) NOT NULL
+) Engine=InnoDB ;
 -- Tabel Kodepos --
 
 -- Tabel User --
