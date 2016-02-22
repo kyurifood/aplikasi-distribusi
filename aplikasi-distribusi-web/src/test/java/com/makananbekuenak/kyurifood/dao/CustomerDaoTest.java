@@ -1,11 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.makananbekuenak.kyurifood.dao;
 
 import com.makananbekuenak.kyurifood.AplikasiDistribusiWebApplication;
-import com.makananbekuenak.kyurifood.entity.Regional;
+import com.makananbekuenak.kyurifood.entity.Customer;
 import javax.transaction.Transactional;
 import org.junit.Assert;
 import org.junit.Test;
@@ -18,23 +14,25 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = AplikasiDistribusiWebApplication.class)
 @Transactional
-@Sql(scripts = {"/mysql/delete-data.sql", "/mysql/sample-regional.sql"})
-public class RegionalDaoTest {
-    
-    @Autowired
-    private RegionalDao regionalDao;
+@Sql(scripts = {"/mysql/delete-data.sql", "/mysql/sample-customer.sql"})
+public class CustomerDaoTest {
+    @Autowired private CustomerDao customerDao;
     
     @Test
     public void testSave(){
-        Regional g = new Regional();
-        Assert.assertNull(g.getKode());
-        Assert.assertNull(g.getNama());
-        regionalDao.save(g);
+        Customer k = new Customer();
+        Assert.assertNull(k.getKode());
+        Assert.assertNull(k.getNama());
+        Assert.assertNull(k.getHp());
+        Assert.assertNull(k.getAlamat());
+        customerDao.save(k);
+        Assert.assertNotNull(k.getKode());
     }
     
     @Test
-    public void testCariByRegional(){
-        Assert.assertNotNull(regionalDao.findOne("235"));
-        Assert.assertNull(regionalDao.findOne("asdi"));
-} 
+    public void testCariById(){
+        Assert.assertNotNull(customerDao.findOne("001"));
+        Assert.assertNull(customerDao.findOne("xyz"));
+    
+    }
 }

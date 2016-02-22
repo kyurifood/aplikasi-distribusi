@@ -1,2 +1,2 @@
-insert into regional (id, kode, nama) values
-('1','235','Kyurifood');
+insert into regional (kode, nama) values
+('235','Kyurifood');
