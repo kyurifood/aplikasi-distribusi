@@ -16,6 +16,12 @@ delete from kelurahan;
 --kecamatan--
 delete from kecamatan;
 
+--permision--
+delete from permission;
+
+--regional--
+delete from regional;
+
 --permission--
 delete from permission;
 
