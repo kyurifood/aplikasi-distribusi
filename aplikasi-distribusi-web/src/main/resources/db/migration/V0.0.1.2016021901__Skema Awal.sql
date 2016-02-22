@@ -27,7 +27,7 @@ fullname varchar(255) not null
 ) Engine=InnoDB;
 -- Tabel Role --
 create table role (
-id varchar(255) not null,
+id varchar(255) primary key not null,
 kode varchar(255) not null unique,
 nama varchar(255) not null
 ) Engine=InnoDB;
@@ -43,3 +43,9 @@ create table permission (
 -- Tabel Marketer --
 
 -- Tabel Customer --
+
+-- Tabel Regional --
+create table regional (
+kode varchar(255) not null,
+nama varchar(255) not null
+) Engine=InnoDB;
