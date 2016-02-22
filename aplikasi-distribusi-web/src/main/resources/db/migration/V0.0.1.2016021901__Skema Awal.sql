@@ -36,7 +36,15 @@ nama varchar(255) not null
 -- Tabel Produk --
 
 -- Tabel Distributor --
-
+create table distributor (
+kode varchar(255) not null unique,
+nama varchar(255) not null,
+hp varchar(255) not null,
+pinBB varchar(255) ,
+email varchar(255) not null,
+rekening varchar(255) not null,
+alamat varchar(255) not null
+) Engine=InnoDB;
 -- Tabel Marketer --
 
 -- Tabel Customer --
