@@ -1,2 +1,2 @@
 insert into kabupaten (id, kode, nama) values 
-('abc','123','gilang');
+('abc','123','recanansyah');
