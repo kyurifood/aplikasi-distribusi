@@ -1,0 +1,21 @@
+language: java
+
+jdk:
+    - oraclejdk8
+
+services:
+    - mysql
+
+env:
+    - PROJECT_FOLDER=aplikasi-distribusi-web
+
+before_install: 
+    - mysql -uroot -e "grant all on belajar.* to belajar@localhost identified by 'java'"
+    - mysql -uroot -e "drop database if exists belajar"
+    - mysql -uroot -e "create database belajar"
+
+before_script:
+    - cd $PROJECT_FOLDER
+
+after_success:
+    - mvn jacoco:report coveralls:report
