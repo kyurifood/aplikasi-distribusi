@@ -86,3 +86,12 @@ kode varchar(255) not null,
 nama varchar(255) not null
 ) Engine=InnoDB;
 
+--Tabel HargaProduk--
+-- Tabel Harga Produk --
+create table hargaproduk (
+produk varchar(255) not null,
+regional varchar(255) not null,
+harga decimal(19,2) not null,
+berlakumulai date not null,
+berlakusampai date
+)Engine=InnoDB;

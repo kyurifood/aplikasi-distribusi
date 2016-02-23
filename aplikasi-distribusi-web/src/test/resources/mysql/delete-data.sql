@@ -33,3 +33,6 @@ delete from customer;
 
 --distributor--
 delete from distributor;
+
+--hargaproduk--
+delete from hargaproduk;
