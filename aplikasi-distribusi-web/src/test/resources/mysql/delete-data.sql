@@ -1,3 +1,6 @@
+--kabupaten--
+delete from kabupaten;
+
 --kodepos--
 delete from kodepos;
 
