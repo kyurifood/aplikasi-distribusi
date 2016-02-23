@@ -1,2 +1,0 @@
---kabupaten--
-delete from kabupaten;
