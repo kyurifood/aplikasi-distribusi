@@ -11,69 +11,71 @@ public class Distributor {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
-    private String kode;
-    private String nama;
-    private String hp;
-    private String pinBB;
-    private String email;
-    private String rekening;
-    private String alamat;
+    private String kodeDis;
+    private String namaDis;
+    private String hpDis;
+    private String pinBBDis;
+    private String emailDis;
+    private String rekeningDis;
+    private String alamatDis;
 
-    public String getAlamat() {
-        return alamat;
+    public String getAlamatDis() {
+        return alamatDis;
     }
 
-    public void setAlamat(String alamat) {
-        this.alamat = alamat;
+    public void setAlamatDis(String alamatDis) {
+        this.alamatDis = alamatDis;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailDis() {
+        return emailDis;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailDis(String emailDis) {
+        this.emailDis = emailDis;
     }
 
-    public String getHp() {
-        return hp;
+    public String getHpDis() {
+        return hpDis;
     }
 
-    public void setHp(String hp) {
-        this.hp = hp;
+    public void setHpDis(String hpDis) {
+        this.hpDis = hpDis;
     }
 
-    public String getKode() {
-        return kode;
+    public String getKodeDis() {
+        return kodeDis;
     }
 
-    public void setKode(String kode) {
-        this.kode = kode;
+    public void setKodeDis(String kodeDis) {
+        this.kodeDis = kodeDis;
     }
 
-    public String getNama() {
-        return nama;
+    public String getNamaDis() {
+        return namaDis;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public void setNamaDis(String namaDis) {
+        this.namaDis = namaDis;
     }
 
-    public String getPinBB() {
-        return pinBB;
+    public String getPinBBDis() {
+        return pinBBDis;
     }
 
-    public void setPinBB(String pinBB) {
-        this.pinBB = pinBB;
+    public void setPinBBDis(String pinBBDis) {
+        this.pinBBDis = pinBBDis;
     }
 
-    public String getRekening() {
-        return rekening;
+    public String getRekeningDis() {
+        return rekeningDis;
     }
 
-    public void setRekening(String rekening) {
-        this.rekening = rekening;
+    public void setRekeningDis(String rekeningDis) {
+        this.rekeningDis = rekeningDis;
     }
+
+   
     
     
     

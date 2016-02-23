@@ -27,15 +27,15 @@ public class DistributorDaoTest {
     @Test
     public void testSave(){
         Distributor di = new Distributor();
-        Assert.assertNull(di.getKode());
-        Assert.assertNull(di.getNama());
-        Assert.assertNull(di.getHp());
-        Assert.assertNull(di.getPinBB());
-        Assert.assertNull(di.getEmail());
-        Assert.assertNull(di.getRekening());
-        Assert.assertNull(di.getAlamat());
+        Assert.assertNull(di.getKodeDis());
+        Assert.assertNull(di.getNamaDis());
+        Assert.assertNull(di.getHpDis());
+        Assert.assertNull(di.getPinBBDis());
+        Assert.assertNull(di.getEmailDis());
+        Assert.assertNull(di.getRekeningDis());
+        Assert.assertNull(di.getAlamatDis());
         distributorDao.save(di);
-        Assert.assertNotNull(di.getKode());
+        Assert.assertNotNull(di.getKodeDis());
     
     }
     
