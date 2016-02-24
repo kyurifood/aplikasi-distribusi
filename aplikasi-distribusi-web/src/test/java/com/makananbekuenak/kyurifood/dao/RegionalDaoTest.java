@@ -31,7 +31,7 @@ public class RegionalDaoTest {
         g.setKode("250");
         g.setNama("artivisi");
         
-        Assert.assertNull(g.getId());
+    
         regionalDao.save(g);
         Assert.assertNotNull(g.getId());
     }
