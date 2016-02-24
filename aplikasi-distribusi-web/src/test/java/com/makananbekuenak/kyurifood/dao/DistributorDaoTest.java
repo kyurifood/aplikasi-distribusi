@@ -20,29 +20,40 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @Transactional
 @Sql(scripts = {"/mysql/delete-data.sql", "/mysql/sample-distributor.sql"})
 public class DistributorDaoTest {
-    
+
     @Autowired
     private DistributorDao distributorDao;
-    
+
     @Test
-    public void testSave(){
+    public void testSave() {
         Distributor di = new Distributor();
-        Assert.assertNull(di.getKode());
-        Assert.assertNull(di.getNama());
-        Assert.assertNull(di.getHp());
-        Assert.assertNull(di.getPinBB());
-        Assert.assertNull(di.getEmail());
-        Assert.assertNull(di.getRekening());
-        Assert.assertNull(di.getAlamat());
+
+        di.setKode("1234");
+        di.setNama("dis001");
+        di.setHp("085397477853");
+        di.setPinBB("abcdef");
+        di.setEmail("market@gmail.com");
+        di.setRekening("0123456789");
+        di.setAlamat("jln.Sapta Marga");
+
+        Assert.assertNull(di.getId());
         distributorDao.save(di);
-        Assert.assertNotNull(di.getKode());
-    
+        Assert.assertNotNull(di.getId());
+
     }
-    
+
     @Test
-    public void testCariBykode(){
-        Assert.assertNotNull(distributorDao.findOne("dis001"));
-        Assert.assertNull(distributorDao.findOne("xyz"));
+    public void testCariById() {
+        Distributor di = distributorDao.findOne("sss");
+        Assert.assertNotNull(di);
+        Assert.assertEquals("1234", di.getKode());
+        Assert.assertEquals("dis001", di.getNama());
+        Assert.assertEquals("085397477853", di.getHp());
+        Assert.assertEquals("abcdef", di.getPinBB());
+        Assert.assertEquals("market@gmail.com", di.getEmail());
+        Assert.assertEquals("0123456789", di.getRekening());
+        Assert.assertEquals("jln.Sapta Marga", di.getAlamat());
+
+        Assert.assertNull(distributorDao.findOne("anm"));
     }
-    
 }

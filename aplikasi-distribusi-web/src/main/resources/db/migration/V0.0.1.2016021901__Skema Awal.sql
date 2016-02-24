@@ -60,6 +60,7 @@ nama varchar(255) NOT NULL
 
 -- Tabel Distributor --
 create table distributor (
+id varchar(255) primary key unique,
 kode varchar(255) not null unique,
 nama varchar(255) not null,
 hp varchar(255) not null,
