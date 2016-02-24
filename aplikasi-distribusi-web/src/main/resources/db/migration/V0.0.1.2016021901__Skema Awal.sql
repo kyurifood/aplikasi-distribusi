@@ -1,3 +1,11 @@
+-- Tabel Bank --
+create table bank (
+id varchar(255) primary key unique,
+kode varchar(255) NOT NULL unique,
+nama varchar(255) NOT NULL,
+kode_bi varchar(255) NOT NULL
+)Engine=InnoDB;
+
 -- Tabel Kabupaten --
 create table kabupaten (
 id varchar(255) primary key unique,
