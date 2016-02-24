@@ -32,20 +32,31 @@ public class MarketerDaoTest {
     @Test
     public void testSave(){
         Marketer m = new Marketer();
+        
+        m.setNama("Marketer 001");
+        m.setAlamat("Cibinong");
+        m.setEmail("m001@test.com");
+        m.setHp("123");
+        m.setPinbb("abc123");
+        m.setRekening("123");
+        
         Assert.assertNull(m.getKode());
-        Assert.assertNull(m.getNama());
-        Assert.assertNull(m.getHp());
-        Assert.assertNull(m.getPinbb());
-        Assert.assertNull(m.getEmail());
-        Assert.assertNull(m.getRekening());
-        Assert.assertNull(m.getAlamat());
         marketerDao.save(m);
         Assert.assertNotNull(m.getKode());
     }
     
     @Test
     public void testCariByKode(){
-        Assert.assertNotNull(marketerDao.findOne("123"));
+        Marketer m = marketerDao.findOne("123");
+        
+        Assert.assertNotNull(m);
+        Assert.assertEquals("market", m.getNama());
+        Assert.assertEquals("085397477853", m.getHp());
+        Assert.assertEquals("market@gmail.com", m.getEmail());
+        Assert.assertEquals("jln.Sapta Marga", m.getAlamat());
+        Assert.assertEquals("abcdef", m.getPinbb());
+        Assert.assertEquals("0123456789", m.getRekening());
+        
         Assert.assertNull(marketerDao.findOne("abc"));
     }
     

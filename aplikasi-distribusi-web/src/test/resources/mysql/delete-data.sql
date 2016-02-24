@@ -1,3 +1,6 @@
+-- bank --
+delete from bank;
+
 --kabupaten--
 delete from kabupaten;
 

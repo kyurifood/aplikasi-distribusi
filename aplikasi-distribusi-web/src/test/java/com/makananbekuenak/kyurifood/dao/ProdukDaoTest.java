@@ -1,6 +1,7 @@
 package com.makananbekuenak.kyurifood.dao;
 
 import com.makananbekuenak.kyurifood.AplikasiDistribusiWebApplication;
+import com.makananbekuenak.kyurifood.entity.Permission;
 import javax.transaction.Transactional;
 import com.makananbekuenak.kyurifood.entity.Produk;
 import org.junit.Assert;
@@ -28,15 +29,23 @@ public class ProdukDaoTest {
     @Test
     public void testSave() {
         Produk p = new Produk();
-        Assert.assertNull(p.getKode());
-        Assert.assertNull(p.getNama());
+        p.setId("123");
+        p.setKode("Tes 123");
+        p.setNama("Cibinong");
+        
+      //  Assert.assertNull(p.getId());
         produkDao.save(p);
-        Assert.assertNotNull(p.getKode());
+        Assert.assertNotNull(p.getId());
     }
     
     @Test
     public void testCariBykode(){
-        Assert.assertNotNull(produkDao.findOne("nnn"));
-        Assert.assertNull(produkDao.findOne("aaa"));
+        Produk p = produkDao.findOne("123");
+        
+        Assert.assertNotNull(p);
+        Assert.assertEquals("123", p.getKode());
+        Assert.assertEquals("pabuaran", p.getNama());
+        
+        Assert.assertNull(produkDao.findOne("abc"));
     }
 }

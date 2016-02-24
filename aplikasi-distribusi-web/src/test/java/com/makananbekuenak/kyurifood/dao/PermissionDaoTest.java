@@ -6,6 +6,7 @@
 package com.makananbekuenak.kyurifood.dao;
 
 import com.makananbekuenak.kyurifood.AplikasiDistribusiWebApplication;
+import com.makananbekuenak.kyurifood.entity.Marketer;
 import com.makananbekuenak.kyurifood.entity.Permission;
 import javax.transaction.Transactional;
 import org.junit.Assert;
@@ -30,16 +31,25 @@ public class PermissionDaoTest {
     @Test
     public void testSave(){
         Permission p = new Permission();
-        Assert.assertNull(p.getKode());
-        Assert.assertNull(p.getNama());
+        
+        p.setId("123");
+        p.setKode("Tes 123");
+        p.setNama("Cibinong");
+        
+     //   Assert.assertNull(p.getId());
         permissionDao.save(p);
-        Assert.assertNotNull(p.getKode());
+        Assert.assertNotNull(p.getId());
 
     }
     
     @Test
     public void testCariById(){
-        Assert.assertNotNull(permissionDao.findOne("nnn"));
-        Assert.assertNull(permissionDao.findOne("asd"));
+        Permission p = permissionDao.findOne("123");
+        
+        Assert.assertNotNull(p);
+        Assert.assertEquals("1234", p.getKode());
+        Assert.assertEquals("city mall", p.getNama());
+        
+        Assert.assertNull(permissionDao.findOne("abc"));
     }
 }

@@ -1,3 +1,3 @@
-insert into permission (kode, nama) values 
-('nnn','satria');
+insert into permission (id,kode,nama) values 
+('123','1234','city mall');
 

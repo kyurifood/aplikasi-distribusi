@@ -24,21 +24,23 @@ public class HargaprodukDaoTest {
     @Test
     public void testSave(){
         Hargaproduk h = new Hargaproduk();
+        h.setProduk("test 001");
         h.setRegional("test abc");
         h.setHarga(new BigDecimal("100000.01"));
         h.setBerlakumulai("tes 2015-01-01");
         h.setBerlakusampai("tes 2015-01-02");
         
-        Assert.assertNull(h.getProduk());
+        Assert.assertNull(h.getId());
         hargaprodukDao.save(h);
-        Assert.assertNotNull(h.getProduk());
+        Assert.assertNotNull(h.getId());
     }
 
 
     @Test
-    public void testFindByProduk(){
+    public void testFindById(){
         Hargaproduk h = hargaprodukDao.findOne("abc123");
         Assert.assertNotNull(h);
+        Assert.assertEquals("001", h.getProduk());
         Assert.assertEquals("abc", h.getRegional());
         Assert.assertEquals(BigDecimal.valueOf(101000.01), h.getHarga());
         Assert.assertEquals("2015-01-01", h.getBerlakumulai());

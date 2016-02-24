@@ -1,2 +1,2 @@
-insert into distributor (kode, nama, hp, pinBB, email, rekening, alamat) values 
-('dis001','recanansyah','083132034626','5774uu','reca.mhs13@ti.poligon.ac.id','xxx','jln RajaEyato');
+insert into distributor (id, kode, nama, hp, pinBB, email, rekening, alamat) values 
+('sss','1234','dis001','085397477853','abcdef','market@gmail.com','0123456789','jln.Sapta Marga');

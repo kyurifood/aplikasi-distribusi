@@ -1,1 +1,1 @@
-insert into kecamatan (kode, nama) values ('bbb','kode');
+insert into kecamatan (id, kode, nama) values ('kec','001','camat');
