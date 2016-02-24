@@ -20,7 +20,7 @@ public class Distributor {
     private String nama;
     @Column(name = "hp", nullable = false)
     private String hp;
-    @Column(name = "pin_BB")
+    @Column(name = "pinBB")
     private String pinBB;
     @Column(name = "email", nullable = false)
     private String email;

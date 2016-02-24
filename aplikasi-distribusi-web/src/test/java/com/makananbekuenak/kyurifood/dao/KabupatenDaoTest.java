@@ -23,11 +23,11 @@ public class KabupatenDaoTest {
     @Test
     public void testSave() {
         Kabupaten k = new Kabupaten();
-
+        k.setId("abc");
         k.setKode("kab001");
         k.setNama("Bogor");
 
-        Assert.assertNull(k.getId());
+        //Assert.assertNull(k.getId());
         kabupatenDao.save(k);
         Assert.assertNotNull(k.getId());
 
