@@ -20,8 +20,17 @@ public class Produk {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private String id;
     private String kode;
     private String nama;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getKode() {
         return kode;
@@ -38,5 +47,6 @@ public class Produk {
     public void setNama(String nama) {
         this.nama = nama;
     }
+
     
 }
