@@ -15,6 +15,7 @@ nama varchar(255) NOT NULL
 
 -- Tabel Kecamatan --
 create table kecamatan (
+id varchar(255) primary key,
 kode varchar(255) not null unique,
 nama varchar(255) not null
 ) Engine=InnoDB ;
@@ -22,7 +23,7 @@ nama varchar(255) not null
 -- Tabel Kelurahan --
 create table kelurahan (
 id varchar(255) primary key unique,
-kode varchar(255) not null,
+kode varchar(255) not null unique,
 nama varchar(255) not null
 )Engine=InnoDB ;
 
@@ -83,6 +84,7 @@ alamat varchar(255) not null
 
 -- Tabel Customer --
 create table customer (
+id varchar(255) primary key unique,
 kode varchar(255) not null unique,
 nama varchar(255) not null,
 hp varchar(255) not null,
@@ -98,6 +100,7 @@ nama varchar(255) not null
 --Tabel HargaProduk--
 -- Tabel Harga Produk --
 create table hargaproduk (
+id varchar(255) primary key,
 produk varchar(255) not null,
 regional varchar(255) not null,
 harga decimal(19,2) not null,

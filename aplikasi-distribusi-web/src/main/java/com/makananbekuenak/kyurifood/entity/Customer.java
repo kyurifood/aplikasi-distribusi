@@ -9,12 +9,22 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 public class Customer {
     
-    @Id @GeneratedValue(generator = "uuid")
+    @Id
+    @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private String id;
     private String kode;
     private String nama;
     private String hp;
     private String alamat;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getAlamat() {
         return alamat;
