@@ -21,17 +21,24 @@ public class KelurahanDaoTest {
     @Test
     public void testSave(){
         Kelurahan k = new Kelurahan();
+        
+        k.setKode("Kode 001");
+        k.setNama("Cibinong");
+        
         Assert.assertNull(k.getId());
-        Assert.assertNull(k.getKode());
-        Assert.assertNull(k.getNama());
         kelurahanDao.save(k);
         Assert.assertNotNull(k.getId());
     }
     
     @Test
     public void testCariById(){
-        Assert.assertNotNull(kelurahanDao.findOne("abc"));
-        Assert.assertNull(kelurahanDao.findOne("xyz"));
+        Kelurahan k = kelurahanDao.findOne("abc");
+        
+        Assert.assertNotNull(k);
+        Assert.assertEquals("001", k.getKode());
+        Assert.assertEquals("Mey", k.getNama());
+        
+        Assert.assertNull(kelurahanDao.findOne("ac"));
     
     }
 }
