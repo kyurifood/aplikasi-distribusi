@@ -49,12 +49,14 @@ nama varchar(255) not null
 
 -- Tabel Permission --
 create table permission (
+id varchar(255) primary key unique,
 kode varchar(255) NOT NULL unique,
 nama varchar(255) NOT NULL
 )Engine=InnoDB;
 
 -- Tabel Produk --
 create table produk (
+id varchar(255) primary key not null,
 kode varchar(255) NOT NULL unique,
 nama varchar(255) NOT NULL
 )Engine=InnoDB;
