@@ -41,7 +41,7 @@ fullname varchar(255) not null
 
 -- Tabel Role --
 create table role (
-id varchar(255) primary key not null,
+id varchar(255) primary key unique,
 kode varchar(255) not null unique,
 nama varchar(255) not null
 )Engine=InnoDB;
@@ -90,7 +90,8 @@ alamat varchar(255) not null
 
 -- Tabel Regional --
 create table regional (
-kode varchar(255) not null,
+id varchar(255) primary key unique,
+kode varchar(255) not null unique,
 nama varchar(255) not null
 ) Engine=InnoDB;
 

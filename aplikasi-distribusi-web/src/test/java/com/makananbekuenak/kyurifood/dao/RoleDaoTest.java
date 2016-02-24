@@ -20,24 +20,27 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @Transactional
 @Sql(scripts = {"/mysql/delete-data.sql", "/mysql/sample-role.sql"})
 public class RoleDaoTest {
-    
+
     @Autowired
     private RoleDao roleDao;
-    
+
     @Test
-    public void testSave(){
+    public void testSave() {
         Role r = new Role();
-        Assert.assertNull(r.getId());
-        Assert.assertNull(r.getKode());
-        Assert.assertNull(r.getNama());
+        r.setId("1");
+        r.setKode("212");
+        r.setNama("kyuri");
         roleDao.save(r);
         Assert.assertNotNull(r.getId());
     }
-    
-    @Test
-    public void testCariByRole(){
-        Assert.assertNotNull(roleDao.findOne("1"));
-        Assert.assertNull(roleDao.findOne("abcd"));
-} 
 
+    @Test
+    public void testCariByRole() {
+        Role r = roleDao.findOne("1");
+        Assert.assertNotNull(r);
+        Assert.assertEquals("212", r.getKode());
+        Assert.assertEquals("kyuri", r.getNama());
+        
+        Assert.assertNull(roleDao.findOne("aaa"));
+    }
 }
