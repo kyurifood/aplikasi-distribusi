@@ -15,10 +15,11 @@ import org.hibernate.annotations.GenericGenerator;
  */
 @Entity
 public class Marketer {
-    
+
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private String id;
     private String kode;
     private String nama;
     private String hp;
@@ -49,6 +50,14 @@ public class Marketer {
 
     public void setHp(String hp) {
         this.hp = hp;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getKode() {
@@ -82,5 +91,4 @@ public class Marketer {
     public void setRekening(String rekening) {
         this.rekening = rekening;
     }
-    
 }

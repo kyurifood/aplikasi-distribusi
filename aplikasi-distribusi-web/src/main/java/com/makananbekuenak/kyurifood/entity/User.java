@@ -19,6 +19,7 @@ public class User {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private String id;
     private String username;
     private String email;
     private String fullname;
@@ -39,6 +40,14 @@ public class User {
         this.fullname = fullname;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -47,6 +56,4 @@ public class User {
         this.username = username;
     }
 
-    
-  
 }

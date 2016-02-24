@@ -1,2 +1,2 @@
 insert into role (id, kode, nama) values
-('1','210','Ativisi');
+('1','212','kyuri');

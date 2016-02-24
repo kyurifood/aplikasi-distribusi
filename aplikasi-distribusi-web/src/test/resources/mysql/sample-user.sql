@@ -1,2 +1,2 @@
-insert into user (username, email, fullname) values
-('artivisi','artivisi@gmail.com','Ativisi Intermidia');
+insert into user (id, username, email, fullname) values
+('001','artivisi','artivisi@gmail.com','artivisi intermedia');
