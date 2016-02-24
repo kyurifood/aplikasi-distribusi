@@ -32,7 +32,7 @@ public class MarketerDaoTest {
     @Test
     public void testSave(){
         Marketer m = new Marketer();
-        
+        m.setKode("123");
         m.setNama("Marketer 001");
         m.setAlamat("Cibinong");
         m.setEmail("m001@test.com");
@@ -40,7 +40,6 @@ public class MarketerDaoTest {
         m.setPinbb("abc123");
         m.setRekening("123");
         
-        Assert.assertNull(m.getKode());
         marketerDao.save(m);
         Assert.assertNotNull(m.getKode());
     }

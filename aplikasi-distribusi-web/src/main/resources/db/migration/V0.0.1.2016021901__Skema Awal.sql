@@ -35,7 +35,8 @@ nama varchar(255) NOT NULL
 
 -- Tabel User --
 create table user (
-username varchar(255)not null unique,
+id varchar(255) primary key unique,
+username varchar(255) not null,
 email varchar(255) not null unique,
 fullname varchar(255) not null
 )Engine=InnoDB;
