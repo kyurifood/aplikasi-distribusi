@@ -76,6 +76,7 @@ alamat varchar(255) not null
 
 -- Tabel Marketer --
 create table marketer (
+id varchar(255) primary key unique,
 kode varchar(255) not null unique,
 nama varchar(255) not null,
 hp varchar(255) not null,
