@@ -1,8 +1,8 @@
 package com.makananbekuenak.kyurifood.dao;
 
 import com.makananbekuenak.kyurifood.AplikasiDistribusiWebApplication;
-import com.makananbekuenak.kyurifood.entity.Customer;
 import javax.transaction.Transactional;
+import com.makananbekuenak.kyurifood.entity.Customer;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,28 +11,39 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = AplikasiDistribusiWebApplication.class)
 @Transactional
-@Sql(scripts = {"/mysql/delete-data.sql", "/mysql/sample-customer.sql"})
+@Sql(scripts = {"/mysql/delete-data.sql","/mysql/sample-customer.sql"})
 public class CustomerDaoTest {
+    
     @Autowired private CustomerDao customerDao;
     
     @Test
     public void testSave(){
-        Customer k = new Customer();
-        Assert.assertNull(k.getKode());
-        Assert.assertNull(k.getNama());
-        Assert.assertNull(k.getHp());
-        Assert.assertNull(k.getAlamat());
-        customerDao.save(k);
-        Assert.assertNotNull(k.getKode());
+        Customer c = new Customer();
+        c.setKode("test 001");
+        c.setNama(("Mey"));
+        c.setHp("085240");
+        c.setAlamat("Cibinong");
+        
+        Assert.assertNull(c.getId());
+        customerDao.save(c);
+        Assert.assertNotNull(c.getId());
     }
-    
+
+
     @Test
-    public void testCariById(){
-        Assert.assertNotNull(customerDao.findOne("001"));
-        Assert.assertNull(customerDao.findOne("xyz"));
-    
+    public void testFindById(){
+        Customer c = customerDao.findOne("ac");
+        Assert.assertNotNull(c);
+        Assert.assertEquals("001", c.getKode());
+        Assert.assertEquals("Mey", c.getNama());
+        Assert.assertEquals("085240", c.getHp());
+        Assert.assertEquals("Cibinong", c.getAlamat());
+        
+        Assert.assertNull(customerDao.findOne("aa"));
+        
     }
 }

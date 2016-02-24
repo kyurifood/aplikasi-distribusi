@@ -1,2 +1,2 @@
-insert into produk (kode, nama) values 
-('nnn','satria');
+insert into produk (id,kode,nama) values 
+('123','123','pabuaran');

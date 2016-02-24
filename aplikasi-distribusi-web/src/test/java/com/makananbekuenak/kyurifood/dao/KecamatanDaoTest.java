@@ -11,6 +11,7 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = AplikasiDistribusiWebApplication.class)
 @Transactional
@@ -20,16 +21,25 @@ public class KecamatanDaoTest {
     
     @Test
     public void testSave(){
-        Kecamatan a = new Kecamatan();
-        Assert.assertNull(a.getNama());
-        Assert.assertNull(a.getKode());
-        kecamatanDao.save(a);
-        Assert.assertNotNull(a.getKode());
+        Kecamatan k = new Kecamatan();
+        k.setId("kec");
+        k.setKode("Kode 001");
+        k.setNama("Cibinong");
+        
+     //   Assert.assertNull(k.getId());
+        kecamatanDao.save(k);
+        Assert.assertNotNull(k.getId());
     }
     
     @Test
-    public void testCariByKode(){
-        Assert.assertNotNull(kecamatanDao.findOne("bbb"));
-        Assert.assertNull(kecamatanDao.findOne("xyz"));
+    public void testCariById(){
+        Kecamatan k = kecamatanDao.findOne("kec");
+        
+        Assert.assertNotNull(k);
+        Assert.assertEquals("001", k.getKode());
+        Assert.assertEquals("camat", k.getNama());
+        
+        Assert.assertNull(kecamatanDao.findOne("bcd"));
     }
+    
 }
