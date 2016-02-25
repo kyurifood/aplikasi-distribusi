@@ -29,13 +29,15 @@ nama varchar(255) not null
 
 -- Tabel Kodepos --
 create table kodepos (
+id varchar(255) primary key unique,
 kode varchar(255) NOT NULL unique,
 nama varchar(255) NOT NULL
 )Engine=InnoDB ;
 
 -- Tabel User --
 create table user (
-username varchar(255)not null unique,
+id varchar(255) primary key unique,
+username varchar(255) not null,
 email varchar(255) not null unique,
 fullname varchar(255) not null
 )Engine=InnoDB;
@@ -75,6 +77,7 @@ alamat varchar(255) not null
 
 -- Tabel Marketer --
 create table marketer (
+id varchar(255) primary key unique,
 kode varchar(255) not null unique,
 nama varchar(255) not null,
 hp varchar(255) not null,

@@ -22,10 +22,9 @@ public class KelurahanDaoTest {
     public void testSave(){
         Kelurahan k = new Kelurahan();
         
-        k.setKode("Kode 001");
+        k.setId("abc");
+        k.setKode("001");
         k.setNama("Cibinong");
-        
-        Assert.assertNull(k.getId());
         kelurahanDao.save(k);
         Assert.assertNotNull(k.getId());
     }

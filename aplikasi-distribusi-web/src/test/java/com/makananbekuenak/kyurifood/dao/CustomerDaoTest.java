@@ -23,12 +23,11 @@ public class CustomerDaoTest {
     @Test
     public void testSave(){
         Customer c = new Customer();
-        c.setKode("test 001");
+        c.setId("1");
+        c.setKode("001");
         c.setNama(("Mey"));
         c.setHp("085240");
         c.setAlamat("Cibinong");
-        
-        Assert.assertNull(c.getId());
         customerDao.save(c);
         Assert.assertNotNull(c.getId());
     }
