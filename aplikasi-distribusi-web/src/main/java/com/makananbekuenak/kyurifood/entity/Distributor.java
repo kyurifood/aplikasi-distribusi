@@ -5,7 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity @Table(name = "distributor")
 public class Distributor {
@@ -14,19 +16,26 @@ public class Distributor {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-    @Column(name = "kode", nullable = false, unique = true)
+    @NotNull @NotEmpty
+    @Column(nullable = false, unique = true)
     private String kode;
-    @Column(name = "nama", nullable = false)
+    @NotNull @NotEmpty
+    @Column(nullable = false)
     private String nama;
-    @Column(name = "hp", nullable = false)
+    @NotNull @NotEmpty
+    @Column(nullable = false)
     private String hp;
-    @Column(name = "pinBB")
+    @NotNull @NotEmpty
+    @Column
     private String pinBB;
-    @Column(name = "email", nullable = false)
+    @NotNull @NotEmpty
+    @Column(nullable = false)
     private String email;
-    @Column(name = "rekening", nullable = false)
+    @NotNull @NotEmpty
+    @Column(nullable = false)
     private String rekening;
-    @Column(name = "alamat", nullable = false)
+    @NotNull @NotEmpty
+    @Column(nullable = false)
     private String alamat;
 
     public String getAlamat() {
@@ -92,5 +101,7 @@ public class Distributor {
     public void setRekening(String rekening) {
         this.rekening = rekening;
     }
+
+    
 
 }
