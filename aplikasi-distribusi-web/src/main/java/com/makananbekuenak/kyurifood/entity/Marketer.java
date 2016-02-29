@@ -4,10 +4,14 @@
  */
 package com.makananbekuenak.kyurifood.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  *
@@ -20,14 +24,36 @@ public class Marketer {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
+    
+    @NotNull @NotEmpty
+    @Column(nullable = false, unique = true)
     private String kode;
+    
+    @NotNull @NotEmpty
+    @Column(nullable = false)
     private String nama;
+    
+    @NotNull @NotEmpty
+    @Column(nullable = false)
     private String hp;
+    
+    @NotNull @NotEmpty
+    @Column(nullable = false)
     private String pinbb;
+    
+    @NotNull @NotEmpty
+    @Column(nullable = false)
     private String email;
+    
+    @NotNull @NotEmpty
+    @Column(nullable = false)
     private String rekening;
+    
+    @NotNull @NotEmpty
+    @Column(nullable = false)
     private String alamat;
 
+    
     public String getAlamat() {
         return alamat;
     }
