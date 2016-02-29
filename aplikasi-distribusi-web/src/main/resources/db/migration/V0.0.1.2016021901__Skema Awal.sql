@@ -103,7 +103,6 @@ kode varchar(255) not null unique,
 nama varchar(255) not null
 ) Engine=InnoDB;
 
---Tabel HargaProduk--
 -- Tabel Harga Produk --
 create table hargaproduk (
 id varchar(255) primary key,
