@@ -31,7 +31,7 @@ public class MarketerDaoTest {
     @Test
     public void testSave() {
         Marketer m = new Marketer();
-        m.setId("001");
+        m.setId("011");
         m.setKode("123");
         m.setNama("Marketer 001");
         m.setAlamat("Cibinong");
@@ -46,7 +46,7 @@ public class MarketerDaoTest {
 
     @Test
     public void testCariByKode() {
-        Marketer m = marketerDao.findOne("001");
+        Marketer m = marketerDao.findOne("011");
 
         Assert.assertNotNull(m);
         Assert.assertEquals("123", m.getKode());
