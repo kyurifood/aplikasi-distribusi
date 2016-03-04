@@ -25,8 +25,6 @@ public class Distributor {
     @NotNull @NotEmpty
     @Column(nullable = false)
     private String hp;
-    @NotNull @NotEmpty
-    @Column
     private String pinBB;
     @NotNull @NotEmpty
     @Column(nullable = false)
