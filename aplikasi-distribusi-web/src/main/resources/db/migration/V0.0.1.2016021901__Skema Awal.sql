@@ -105,7 +105,7 @@ nama varchar(255) not null
 
 -- Tabel Harga Produk --
 create table hargaproduk (
-id varchar(255) primary key,
+id varchar(255) primary key unique,
 produk varchar(255) not null,
 regional varchar(255) not null,
 harga decimal(19,2) not null,

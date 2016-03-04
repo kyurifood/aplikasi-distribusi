@@ -10,7 +10,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  *
@@ -24,10 +26,12 @@ public class Permission {
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
     
-    @Column(name = "kode", nullable = false, unique = true)
+    @NotNull @NotEmpty
+    @Column(nullable=false, unique=true)
     private String kode;
     
-    @Column(name = "nama", nullable = false)
+    @NotNull @NotEmpty
+    @Column(nullable=false, unique=true)
     private String nama;
 
     public String getId() {

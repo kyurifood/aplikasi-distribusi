@@ -1,10 +1,13 @@
 
 package com.makananbekuenak.kyurifood.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Role {
@@ -12,7 +15,13 @@ public class Role {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
+    
+    @NotNull @NotEmpty
+    @Column(nullable = false, unique = true)
     private String kode;
+    
+    @NotNull @NotEmpty
+    @Column(nullable = false)
     private String nama;
 
     public String getId() {
