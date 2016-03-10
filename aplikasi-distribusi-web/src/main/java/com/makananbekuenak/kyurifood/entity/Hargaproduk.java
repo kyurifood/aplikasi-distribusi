@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.GenericGenerator;
-
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "hargaproduk")
@@ -18,15 +18,31 @@ public class Hargaproduk {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
-    private String produk;
-    private String regional;
+    private String id;
     
-    @NotNull @Min(0)
+    @NotNull @NotEmpty
+    @Column(nullable = false)
+    private String produk;
+    
+    private String regional;
+    @NotNull
+    @Min(0)
     @Column(nullable = false)
     private BigDecimal harga;
     
+    @NotNull @NotEmpty
+    @Column(nullable = false)
     private String berlakumulai;
+    
     private String berlakusampai;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getBerlakumulai() {
         return berlakumulai;
@@ -67,7 +83,4 @@ public class Hargaproduk {
     public void setRegional(String regional) {
         this.regional = regional;
     }
-
-
-    
 }

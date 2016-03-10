@@ -15,35 +15,39 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-
 /**
  *
  * @author gilang
  */
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = AplikasiDistribusiWebApplication.class)
 @Transactional
 @Sql(scripts = {"/mysql/delete-data.sql", "/mysql/sample-user.sql"})
 public class UserDaoTest {
-    
+
     @Autowired
     private UserDao userDao;
-    
+
     @Test
-    public void testSave(){
+    public void testSave() {
         User u = new User();
-        Assert.assertNull(u.getUsername());
-        Assert.assertNull(u.getEmail());
-        Assert.assertNull(u.getFullname());
+        u.setId("001");
+        u.setUsername("artivisi");
+        u.setEmail("artivisi@gmail.com");
+        u.setFullname("Artivisi Intermedia");
         userDao.save(u);
-        Assert.assertNotNull(u.getUsername());
+        Assert.assertNotNull(u.getId());
     }
-    
+
     @Test
-    public void testCariByUsername(){
-        Assert.assertNotNull(userDao.findOne("artivisi"));
-        Assert.assertNull(userDao.findOne("abcd"));
+    public void testCariById() {
+        User u = userDao.findOne("001");
+
+        Assert.assertNotNull(u);
+        Assert.assertEquals("artivisi", u.getUsername());
+        Assert.assertEquals("artivisi@gmail.com", u.getEmail());
+        Assert.assertEquals("artivisi intermedia", u.getFullname());
+
+        Assert.assertNull(userDao.findOne("123"));
     }
-    
 }

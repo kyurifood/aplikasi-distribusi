@@ -1,25 +1,38 @@
 package com.makananbekuenak.kyurifood.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
+@Table(name = "kecamatan")
 public class Kecamatan {
 
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
+    
+    private String id;
+    
+    @NotNull @NotEmpty
+    @Column(nullable = false, unique = true)
     private String kode;
-    private  String nama;
+    
+    @NotNull @NotEmpty
+    @Column(nullable = false)
+    private String nama;
 
-    public String getNama() {
-        return nama;
+    public String getId() {
+        return id;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getKode() {
@@ -29,5 +42,16 @@ public class Kecamatan {
     public void setKode(String kode) {
         this.kode = kode;
     }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+    
+    
+
     
 }

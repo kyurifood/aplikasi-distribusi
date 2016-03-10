@@ -20,21 +20,28 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @Transactional
 @Sql(scripts = {"/mysql/delete-data.sql", "/mysql/sample-regional.sql"})
 public class RegionalDaoTest {
-    
+
     @Autowired
     private RegionalDao regionalDao;
-    
+
     @Test
-    public void testSave(){
+    public void testSave() {
         Regional g = new Regional();
-        Assert.assertNull(g.getKode());
-        Assert.assertNull(g.getNama());
+        g.setId("1");
+        g.setKode("250");
+        g.setNama("artivisi");
+
         regionalDao.save(g);
+        Assert.assertNotNull(g.getId());
     }
-    
+
     @Test
-    public void testCariByRegional(){
-        Assert.assertNotNull(regionalDao.findOne("235"));
-        Assert.assertNull(regionalDao.findOne("asdi"));
-} 
+    public void testCariById() {
+        Regional l = regionalDao.findOne("1");
+        Assert.assertNotNull(l);
+        Assert.assertEquals("250", l.getKode());
+        Assert.assertEquals("artivisi", l.getNama());
+
+        Assert.assertNull(regionalDao.findOne("aaa"));
+    }
 }

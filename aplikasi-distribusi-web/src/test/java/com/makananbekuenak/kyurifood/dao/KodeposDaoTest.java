@@ -23,16 +23,24 @@ public class KodeposDaoTest {
     @Test
     public void testSave(){
         Kodepos k = new Kodepos();
-        Assert.assertNull(k.getKode());
-        Assert.assertNull(k.getNama());
+        k.setId("abc");
+        k.setKode("1234");
+        k.setNama("artivisi");
+
+        //Assert.assertNull(k.getId());
         kodeposDao.save(k);
-        Assert.assertNotNull(k.getKode());
+        Assert.assertNotNull(k.getId());
 
     }
     
     @Test
-    public void testCariByKode(){
-        Assert.assertNotNull(kodeposDao.findOne("kkk"));
+    public void testCariById() {
+        Kodepos k = kodeposDao.findOne("abcd");
+        Assert.assertNotNull(k);
+        Assert.assertEquals("1234", k.getKode());
+        Assert.assertEquals("artivisi", k.getNama());
+
+
         Assert.assertNull(kodeposDao.findOne("xyz"));
     }
 }
